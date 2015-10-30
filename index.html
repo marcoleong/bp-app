@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <style>
+        svg {
+          font: 10px sans-serif;
+        }
+        .line {
+          fill: none;
+          stroke: #000;
+          stroke-width: 1.5px;
+        }
+
+        .line-x { stroke: skyblue;}
+        .line-y { stroke: #CC00FF;}
+        .line-z { stroke: lightgreen;}
+
+        .axis path,
+        .axis line {
+          fill: none;
+          stroke: #000;
+          shape-rendering: crispEdges;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script src="bower_components/d3/d3.min.js"></script>
+    <script src="bower_components/lodash/lodash.min.js"></script>
+    <title>Bowler Plus</title>
+  </head>
+  <body>
+    <div class="container">
+        <button id="connect-btn" class="btn btn-primary">Connect</button>
+        <h1>Revolution rate: <span id="rpm"></span> RPM </h1>
+        <table class="table table-bordered table-condensed">
+            <thead>
+                <tr>
+                    <th width="200px">Update interval: <span id="rate-value"></span></th>
+                    <th width="100px">X</th>
+                    <th width="100px">Y</th>
+                    <th width="100px">Z</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Accelerometer (scale: 2g)</td>
+                    <td><span id="accX"></span></td>
+                    <td><span id="accY"></span></td>
+                    <td><span id="accZ"></span></td>
+                </tr>
+                <tr>
+                    <td>Gyroscope</td>
+                    <td><span id="gyrX"></span></td>
+                    <td><span id="gyrY"></span></td>
+                    <td><span id="gyrZ"></span></td>
+                </tr>
+                <tr>
+                    <td>Gyro Rate (scale: 250 deg/s)</td>
+                    <td><span id="gyrRX"></span></td>
+                    <td><span id="gyrRY"></span></td>
+                    <td><span id="gyrRZ"></span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div id="graph"></div>
+
+        <div>
+            <span style="color: skyblue">X Axis Line</span>
+            <span style="color: #CC00FF">Y Axis Line</span>
+            <span style="color: lightgreen">Z Axis Line</span>
+        </div>
+
+    </div>
+      
+    <script src="scripts/chart.js"></script>
+  </body>
+</html>
